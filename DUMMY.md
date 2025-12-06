@@ -9,3 +9,4 @@ Change 6: perf: optimize image loading
 Change 7: feat: add dashboard
 Change 8: fix: login page layout
 Change 9: feat: add user login
+Change 10: feat: initial commit
