@@ -8,3 +8,4 @@ Change 5: feat: add dark mode
 Change 6: perf: optimize image loading
 Change 7: feat: add dashboard
 Change 8: fix: login page layout
+Change 9: feat: add user login
