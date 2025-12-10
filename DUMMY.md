@@ -5,3 +5,4 @@ Change 2: fix: typo in profile page
 Change 3: feat: add user profile settings
 Change 4: fix: darker background in dark mode
 Change 5: feat: add dark mode
+Change 6: perf: optimize image loading
