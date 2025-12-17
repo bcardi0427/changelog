@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-grid"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>Changelog</h1>
+            <p>Follow up on the latest improvements and updates.</p>
+        </header>
+
+        <div class="controls">
+            <input type="text" placeholder="Search Entries..." class="search-input">
+            <button class="filter-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                Filters
+            </button>
+        </div>
+
+        <div id="changelog-feed" class="feed">
+            <!-- Content will be injected here -->
+            <div class="loading">Loading updates...</div>
+        </div>
+    </div>
+
+    <script src="app.js?v=force_reload_999"></script>
+</body>
+
+</html>

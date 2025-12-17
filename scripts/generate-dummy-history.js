@@ -33,22 +33,26 @@ console.log("Generating dummy git history...");
 history.reverse().forEach((commit, index) => {
     // Modify file to ensure something to commit
     fs.appendFileSync(dummyFile, `\nChange ${index}: ${commit.message}`);
-    
+
+    // Calculate date
     // Calculate date
     const date = new Date();
     date.setDate(date.getDate() - commit.daysAgo);
+    // Add some random variation to time so they aren't all identical
+    date.setHours(9 + Math.floor(Math.random() * 8)); // 9 AM to 5 PM
+    date.setMinutes(Math.floor(Math.random() * 60));
     const dateString = date.toISOString();
 
     // Commit with specific date
     console.log(`Committing: ${commit.message} at ${dateString}`);
-    
+
     // Set GIT_AUTHOR_DATE and GIT_COMMITTER_DATE
     const env = { ...process.env, GIT_AUTHOR_DATE: dateString, GIT_COMMITTER_DATE: dateString };
-    
+
     try {
         execSync('git add .', { stdio: 'inherit' });
         execSync(`git commit -m "${commit.message}"`, { env, stdio: 'inherit' });
-    } catch(e) {
+    } catch (e) {
         // If nothing to commit (e.g. initial run might differ), just ignore or log
         console.log("Nothing to commit or error.");
     }
