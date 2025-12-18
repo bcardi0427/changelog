@@ -14,6 +14,22 @@
     --badge-improved-text: #60a5fa;
 
     --font-inter: 'Inter', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+body.light-mode {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a1e;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
+
+    --badge-new-bg: #dcfce7;
+    --badge-new-text: #166534;
+    --badge-fix-bg: #fee2e2;
+    --badge-fix-text: #991b1b;
+    --badge-improved-bg: #dbeafe;
+    --badge-improved-text: #1e40af;
 }
 
 body {
@@ -24,6 +40,7 @@ body {
     font-family: var(--font-inter);
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .background-grid {
@@ -245,4 +262,39 @@ h2.entry-title {
     text-align: center;
     color: var(--text-secondary);
     padding: 40px;
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed);
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Update elements to use transitions */
+.entry,
+.card,
+.badge,
+.commit-item,
+.search-input,
+.filter-btn,
+.commit-time {
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
 }

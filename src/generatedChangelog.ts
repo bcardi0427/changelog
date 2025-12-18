@@ -5,6 +5,14 @@ export const changelogData: ChangelogGroup[] = [
     "date": "2025-12-16",
     "commits": [
       {
+        "hash": "ceaef09afd441321a182678d171bfac446d3036e",
+        "date": "2025-12-16",
+        "timestamp": "2025-12-16T19:35:11-05:00",
+        "author": "Gerald Haygood",
+        "message": "feat: use git history for changelog and improve time display",
+        "category": "New"
+      },
+      {
         "hash": "dfe832bcf0f4464c93592fb5aecbef01ebbc18e8",
         "date": "2025-12-16",
         "timestamp": "2025-12-16T21:54:53Z",

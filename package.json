@@ -7,6 +7,7 @@
     "gen-changelog": "node scripts/generate-changelog.js",
     "dev": "npm run gen-changelog && vite",
     "build": "npm run gen-changelog && tsc -b && vite build",
+    "standalone": "node scripts/build-standalone.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -26,6 +27,7 @@
     "globals": "^16.5.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-singlefile": "^2.3.0"
   }
 }

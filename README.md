@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Git Changelog Generator 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance changelog generator that transforms your git history into a beautiful, interactive, and portable single-file HTML document.
 
-Currently, two official plugins are available:
+![Changelog UI Preview](https://raw.githubusercontent.com/username/repository/main/preview.png) *(Note: Replace with actual image link if available)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## React Compiler
+-   **Native Git Integration**: Automatically extracts commits directly from any local `.git` repository.
+-   **Single-File Portability**: Bundles HTML, CSS, and JavaScript into a **single `.html` file** that works anywhere without a server.
+-   **Premium UI Design**: Built with React and Vanilla CSS for a sleek, dark-themed, and responsive experience.
+-   **Intelligent Categorization**: Automatically categorizes commits based on prefixes (feat, fix, perf, etc.).
+-   **Detailed Timestamps**: Displays relative dates and specific times for every change.
+-   **Flexible CLI**: Run it interactively or with command-line arguments for automation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   [Node.js](https://nodejs.org/) (v18 or higher recommended)
+-   [Git](https://git-scm.com/) installed and accessible in your system path.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  Clone this repository:
+    ```bash
+    git clone <repository-url>
+    cd changelog
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+## 📖 Usage
+
+### Standalone Generator (Recommended)
+
+To generate a changelog for any project on your computer:
+
+```bash
+npm run standalone
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The script will guide you through:
+1.  Entering the path to the git repository you want to analyze.
+2.  Choosing where to save the final `.html` file.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Automated Generation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+You can also bypass the prompts by providing arguments directly:
+
+```bash
+npm run standalone -- --repo "C:\path\to\your\project" --output "C:\path\to\changelog.html"
 ```
+
+### Local Development
+
+If you want to modify the design or logic:
+
+```bash
+# Start development server with hot-reload
+npm run dev
+```
+
+The dev server will automatically generate data from the *current* repository.
+
+## 🛠️ How It Works
+
+1.  **Data Extraction**: A Node.js script (`scripts/generate-changelog.js`) runs `git log` on the target repository.
+2.  **Data Baking**: The extracted history is transformed into a TypeScript data file (`src/generatedChangelog.ts`).
+3.  **Standalone Build**: Vite compiles the React application and uses `vite-plugin-singlefile` to inline all assets.
+4.  **Deployment**: The script moves the final `index.html` to your desired output path.
+
+## 🎨 Customizing
+
+-   **Styles**: Modify `src/Changelog.css` to update colors, typography, and layout.
+-   **Categories**: Update `scripts/generate-changelog.js` to change how commit messages are categorized.
+-   **Components**: Edit `src/Changelog.tsx` to change the HTML structure or logic.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

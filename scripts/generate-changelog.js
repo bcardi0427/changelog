@@ -5,14 +5,28 @@ import { fileURLToPath } from 'url';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const OUTPUT_FILE = join(__dirname, '../public/changelog.json');
+// Parse --repo argument
+function getRepoPath() {
+    const args = process.argv.slice(2);
+    const repoIndex = args.indexOf('--repo');
+    if (repoIndex !== -1 && args[repoIndex + 1]) {
+        // Remove surrounding quotes if present
+        let path = args[repoIndex + 1];
+        if ((path.startsWith('"') && path.endsWith('"')) || (path.startsWith("'") && path.endsWith("'"))) {
+            path = path.slice(1, -1);
+        }
+        return path;
+    }
+    // Default to current directory
+    return process.cwd();
+}
+
+const REPO_PATH = getRepoPath();
 
 const execPromise = (command) =>
     new Promise((resolve, reject) => {
-        exec(command, (error, stdout, stderr) => {
+        exec(command, { maxBuffer: 1024 * 1024 * 10 }, (error, stdout, stderr) => {
             if (error) {
-                // If no commits yet, it usually errors. resolve with empty if specific error or reject.
-                // For now reject to catch in main.
                 reject({ error, stderr });
                 return;
             }
@@ -28,11 +42,12 @@ function getCategory(message) {
     return 'Other';
 }
 
-// Ensure the generateChangelog function calls the new logic
 async function generateChangelog() {
     try {
-        console.log('Fetching git history...');
-        const stdout = await execPromise('git --no-pager log --pretty=format:"%H|%aI|%an|%s"');
+        console.log(`Fetching git history from: ${REPO_PATH}`);
+        // Use -C flag with quoted path to handle spaces
+        const command = `git -C "${REPO_PATH}" --no-pager log --pretty=format:"%H|%aI|%an|%s"`;
+        const stdout = await execPromise(command);
 
         const lines = stdout.toString().split('\n').filter(line => line.trim() !== '');
 
