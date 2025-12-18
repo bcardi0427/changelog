@@ -5,12 +5,67 @@ export const changelogData: ChangelogGroup[] = [
     "date": "2025-12-18",
     "commits": [
       {
+        "hash": "54688bf882b62746fea78f903f8bfb19cc2b5572",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T09:43:35-05:00",
+        "author": "Gerald Haygood",
+        "message": "feat: add AI-enhanced changelog descriptions using Gemini",
+        "category": "New",
+        "enhancedMessage": "Automatically generate clear and helpful update descriptions powered by AI."
+      },
+      {
+        "hash": "5bf9417dcbd6efdcbbdf5a4b8ed9f3dfc7b7cce5",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T07:12:12-05:00",
+        "author": "Gerald Haygood",
+        "message": "chore: ignore test output files",
+        "category": "Other",
+        "enhancedMessage": "Optimized internal project files for a smoother experience."
+      },
+      {
+        "hash": "cb2cadfbb3c1da2a04438ff2e6353cb98609ea7b",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T07:06:55-05:00",
+        "author": "Gerald Haygood",
+        "message": "docs: add preview screenshot",
+        "category": "New",
+        "enhancedMessage": "Added a preview image to show you what's new."
+      },
+      {
+        "hash": "0271a9af185673c96554ed222ced33fa5c37909b",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T07:01:23-05:00",
+        "author": "Gerald Haygood",
+        "message": "docs: fix changelog link to use GitHub Pages",
+        "category": "Other",
+        "enhancedMessage": "Fixed a broken link to ensure the changelog is always accessible."
+      },
+      {
+        "hash": "1ad106896ea78a761b757d703bc23917584f5b24",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T06:43:51-05:00",
+        "author": "Gerald Haygood",
+        "message": "docs: add link to view live changelog",
+        "category": "New",
+        "enhancedMessage": "Easily view the live changelog with a new direct link."
+      },
+      {
+        "hash": "b817d34588e6a31bc7e91af482a6995bb6a947f0",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T06:39:56-05:00",
+        "author": "Gerald Haygood",
+        "message": "fix: improve theme toggle visibility and output path handling",
+        "category": "Fix",
+        "enhancedMessage": "Made the theme switch easier to see and refined how files are saved."
+      },
+      {
         "hash": "3e61492b077155f91e8313172523c147172cb75b",
         "date": "2025-12-18",
         "timestamp": "2025-12-18T06:27:13-05:00",
         "author": "Gerald Haygood",
         "message": "feat: add light/dark mode toggle and update README",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "Personalize your view with a new toggle for light and dark modes."
       }
     ]
   },
@@ -23,7 +78,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-16T19:35:11-05:00",
         "author": "Gerald Haygood",
         "message": "feat: use git history for changelog and improve time display",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "Improved history tracking and time formatting for clearer updates."
       },
       {
         "hash": "dfe832bcf0f4464c93592fb5aecbef01ebbc18e8",
@@ -31,7 +87,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-16T21:54:53Z",
         "author": "Gerald Haygood",
         "message": "feat: add changelog page",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "Added a new page where you can stay informed about all our latest updates."
       }
     ]
   },
@@ -44,7 +101,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-15T21:54:54Z",
         "author": "Gerald Haygood",
         "message": "chore: update documentation",
-        "category": "Other"
+        "category": "Other",
+        "enhancedMessage": "Updated our help guides to provide you with more accurate information."
       }
     ]
   },
@@ -57,7 +115,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-14T21:54:54Z",
         "author": "Gerald Haygood",
         "message": "fix: typo in profile page",
-        "category": "Fix"
+        "category": "Fix",
+        "enhancedMessage": "Fixed a minor text error on the profile page."
       }
     ]
   },
@@ -70,7 +129,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-13T21:54:55Z",
         "author": "Gerald Haygood",
         "message": "feat: add user profile settings",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "Manage your account details easily in the new profile settings."
       }
     ]
   },
@@ -83,7 +143,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-12T21:54:55Z",
         "author": "Gerald Haygood",
         "message": "fix: darker background in dark mode",
-        "category": "Fix"
+        "category": "Fix",
+        "enhancedMessage": "Refined the dark mode background for better readability."
       }
     ]
   },
@@ -96,7 +157,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-11T21:54:55Z",
         "author": "Gerald Haygood",
         "message": "feat: add dark mode",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "You can now switch to dark mode for a more comfortable viewing experience."
       }
     ]
   },
@@ -109,7 +171,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-10T21:54:56Z",
         "author": "Gerald Haygood",
         "message": "perf: optimize image loading",
-        "category": "Improved"
+        "category": "Improved",
+        "enhancedMessage": "Enjoy faster image loading for a smoother experience."
       }
     ]
   },
@@ -122,7 +185,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-09T21:54:56Z",
         "author": "Gerald Haygood",
         "message": "feat: add dashboard",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "Introduced a new dashboard to give you a better overview of your activity."
       }
     ]
   },
@@ -135,7 +199,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-08T21:54:57Z",
         "author": "Gerald Haygood",
         "message": "fix: login page layout",
-        "category": "Fix"
+        "category": "Fix",
+        "enhancedMessage": "Improved the layout of the login screen for better clarity."
       }
     ]
   },
@@ -148,7 +213,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-07T21:54:57Z",
         "author": "Gerald Haygood",
         "message": "feat: add user login",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "Securely access your account with our new login system."
       }
     ]
   },
@@ -161,7 +227,8 @@ export const changelogData: ChangelogGroup[] = [
         "timestamp": "2025-12-06T21:54:58Z",
         "author": "Gerald Haygood",
         "message": "feat: initial commit",
-        "category": "New"
+        "category": "New",
+        "enhancedMessage": "The first version of our product is now available!"
       }
     ]
   }

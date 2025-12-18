@@ -2,9 +2,9 @@
 
 A modern, high-performance changelog generator that transforms your git history into a beautiful, interactive, and portable single-file HTML document.
 
-## 📋 [View This Project's Changelog](https://bcardi0427.github.io/changelog/changelog.html)
+## 📋 [View This Project's Changelog](https://bcardi0427.github.io/changelog/changelog-ai.html)
 
-![Changelog UI Preview](public/preview.png)
+![Changelog UI Preview](public/preview2.png)
 
 ## ✨ Key Features
 
