@@ -25,3 +25,9 @@ dist-ssr
 
 # Test outputs
 test-*.html
+
+# Environment variables (API keys)
+.env
+
+# AI cache
+.changelog-cache.json

@@ -5,6 +5,7 @@ export interface Commit {
     timestamp?: string;
     author: string;
     message: string;
+    enhancedMessage?: string;  // AI-generated user-friendly description
     category: 'New' | 'Fix' | 'Improved' | 'Other';
 }
 

@@ -39,14 +39,14 @@ const ChangelogEntry: React.FC<ChangelogEntryProps> = ({ date, commits }) => {
             </div>
             <div className="content-column">
                 <Badge category={highlight.category || 'Other'} />
-                <h2 className="entry-title">{highlight.message}</h2>
+                <h2 className="entry-title">{highlight.enhancedMessage || highlight.message}</h2>
                 <div className="entry-description">
                     <ul className="commit-list">
                         {commits.map((commit, index) => {
                             if (!commit) return null;
                             return (
-                                <li key={index} className="commit-item">
-                                    <strong>{commit.category || 'Other'}:</strong> {commit.message || ''}
+                                <li key={index} className="commit-item" title={commit.message}>
+                                    <strong>{commit.category || 'Other'}:</strong> {commit.enhancedMessage || commit.message || ''}
                                     {commit.timestamp && (
                                         <span className="commit-time">
                                             {new Date(commit.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
