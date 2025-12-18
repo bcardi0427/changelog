@@ -1,6 +1,6 @@
 import { spawn } from 'child_process';
 import { copyFile, mkdir } from 'fs/promises';
-import { existsSync } from 'fs';
+import { existsSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createInterface } from 'readline';
@@ -86,12 +86,21 @@ async function main() {
 
     // Prompt for output path if not provided
     if (!output) {
-        output = await prompt('\nEnter the output path for the HTML file (e.g., C:\\output\\changelog.html):\n> ');
+        output = await prompt('\nEnter the output path (e.g., C:\\output or C:\\output\\changelog.html):\n> ');
     }
 
-    // Ensure output ends with .html
-    if (!output.toLowerCase().endsWith('.html')) {
-        output = output + '.html';
+    // Check if output is a directory
+    try {
+        if (existsSync(output) && statSync(output).isDirectory()) {
+            output = join(output, 'changelog.html');
+        } else if (!output.toLowerCase().endsWith('.html')) {
+            output = output + '.html';
+        }
+    } catch (e) {
+        // If path doesn't exist yet, just ensure .html extension
+        if (!output.toLowerCase().endsWith('.html')) {
+            output = output + '.html';
+        }
     }
 
     console.log('\n--- Configuration ---');

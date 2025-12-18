@@ -2,6 +2,19 @@ import type { ChangelogGroup } from './types';
 
 export const changelogData: ChangelogGroup[] = [
   {
+    "date": "2025-12-18",
+    "commits": [
+      {
+        "hash": "3e61492b077155f91e8313172523c147172cb75b",
+        "date": "2025-12-18",
+        "timestamp": "2025-12-18T06:27:13-05:00",
+        "author": "Gerald Haygood",
+        "message": "feat: add light/dark mode toggle and update README",
+        "category": "New"
+      }
+    ]
+  },
+  {
     "date": "2025-12-16",
     "commits": [
       {
