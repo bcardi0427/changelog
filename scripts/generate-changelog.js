@@ -78,7 +78,7 @@ async function enhanceWithAI(commits, cache) {
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3-flash-preview' });
 
     // Find commits that need enhancement
     const needsEnhancement = commits.filter(c => !cache[c.hash]);

@@ -26,25 +26,40 @@ A modern, high-performance changelog generator that transforms your git history 
 
 ### Installation
 
-1.  Clone this repository:
-    ```bash
-    git clone <repository-url>
-    cd changelog
-    ```
+This project is available in two versions:
 
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
+#### 🤖 With AI Enhancement (Recommended)
 
-3.  (Optional) Set up AI enhancement:
-    ```bash
-    # Copy the example environment file
-    cp .env.example .env
-    
-    # Edit .env and add your Gemini API key
-    GEMINI_API_KEY=your_api_key_here
-    ```
+Get the AI-powered version that transforms commit messages into user-friendly descriptions:
+
+```bash
+git clone https://github.com/bcardi0427/changelog.git
+cd changelog
+git checkout feature/ai-enhanced-descriptions
+npm install
+```
+
+Then set up your Gemini API key:
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit .env and add your Gemini API key (get one free at https://aistudio.google.com/app/apikey)
+GEMINI_API_KEY=your_api_key_here
+```
+
+#### 📝 Without AI (Basic Version)
+
+Get the lightweight version without AI dependencies:
+
+```bash
+git clone https://github.com/bcardi0427/changelog.git
+cd changelog
+# Stay on master branch (default)
+npm install
+```
+
+This version displays the original git commit messages as-is.
 
 ## 📖 Usage
 
