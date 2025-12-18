@@ -4,7 +4,7 @@ A modern, high-performance changelog generator that transforms your git history 
 
 ## 📋 [View This Project's Changelog](https://bcardi0427.github.io/changelog/changelog.html)
 
-![Changelog UI Preview](https://raw.githubusercontent.com/username/repository/main/preview.png) *(Note: Replace with actual image link if available)*
+![Changelog UI Preview](public/preview.png)
 
 ## ✨ Key Features
 
