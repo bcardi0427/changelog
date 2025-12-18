@@ -15,6 +15,11 @@ A modern, high-performance changelog generator that transforms your git history 
 -   **Detailed Timestamps**: Displays relative dates and specific times for every change.
 -   **Flexible CLI**: Run it interactively or with command-line arguments for automation.
 
+> [!TIP]
+> **🤖 Want AI-Enhanced Descriptions?**  
+> Check out the [AI-Enhanced Branch](https://github.com/bcardi0427/changelog/tree/feature/ai-enhanced-descriptions) which uses Google Gemini to automatically transform developer commit messages into user-friendly descriptions!  
+> [View AI-Enhanced Changelog Demo](https://bcardi0427.github.io/changelog/changelog-ai.html)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
